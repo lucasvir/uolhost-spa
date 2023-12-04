@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Saira+Extra+Condensed:wght@700&display=swap");
+
+.container {
+    margin-top: 40% !important; 
+    height: 100vh;
+}
+
+#text-wrapper {
+    color: #ffe4c4;
+    text-decoration: none;
+
+    #sign {
+        text-align: center;
+        transition: all .6s;
+    }
+}
+
+#text-wrapper:hover {
+    cursor: pointer;
+    color: #ff8c00;
+
+    #sign {
+        color: #ff5100;
+        margin-left: 70%;
+    }
+}
+
+#title-home {
+    font-family: "Saira Extra Condensed";
+    font-size: 152px;
+    transition: 0.3s;
+}

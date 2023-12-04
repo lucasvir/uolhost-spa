@@ -1,0 +1,88 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 46px;
+    border: 2px dashed #ff8c00;
+    border-radius: 8px;
+    background-color: #242424;
+    gap: 24px;
+}
+
+#cadastro-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+}
+
+fieldset > legend {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+fieldset > label {
+    margin-top: 12px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: 2px solid #ff8c00;
+}
+
+input:focus {
+    border: 2px solid #ff8c00;
+}
+
+#group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #ff8c00;
+    padding: 14px;
+    padding-bottom: 24px;
+    margin-top: 24px;
+}
+
+#group > legend {
+    font-size: 24px;
+}
+
+.radio-wrap {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.radio-wrap > input {
+    outline: none;
+}
+
+#button-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+#button-wrapper > button {
+    background-color: #ff8c00;
+    padding: 12px;
+    width: 42%;
+    border-radius: 8px;
+    border: none;
+    color: azure;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
+    transition: all 0.4s;
+}
+
+#button-wrapper > button:hover {
+    background-color: #ff3c00;
+}

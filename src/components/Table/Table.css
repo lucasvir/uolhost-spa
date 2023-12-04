@@ -1,0 +1,57 @@
+table {
+    border: 2px solid #ff8c00;
+    padding: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+tr {
+    padding: 12px;
+    border: 1px solid #ff8c00;
+}
+
+th {
+    border: 1px solid #ff8c00;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ff8c00;
+}
+
+.link-button {
+    background-color: transparent;
+    background: none;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    color: azure;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+
+    transition: all 0.4s;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+    color: #ff8c00;
+}
+
+#new-button {
+
+    background-color: #ff8c00;
+    padding: 12px;
+    width: 42%;
+    border-radius: 8px;
+    border: none;
+    color: azure;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+
+    transition: all 0.4s;
+}
+
+#new-button:hover {
+    background-color: #ff3c00;
+}
