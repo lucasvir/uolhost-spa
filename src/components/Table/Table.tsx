@@ -1,22 +1,22 @@
 import { v4 as uuidv4 } from "uuid";
 import { UserData } from "../../interfaces/UserData";
 import "./Table.css";
-import { useState } from "react";
-import { Form } from "../Form/Form";
+import { useNavigate } from "react-router-dom";
 
 interface TableProps {
     users: UserData[] | undefined;
 }
 
 export function Table({ users }: TableProps) {
-    const [isModalOn, setIsModalOn] = useState(false);
 
-    const handleOpenModal = () => {
-        setIsModalOn((prev) => !prev);
+    const navigate = useNavigate();
+    const handleOpenForm = () => {
+        navigate('/form');
     };
 
     return (
         <>
+            <h1 id="title">Jogadores cadastrados</h1>
             <table>
                 <thead>
                     <tr>
@@ -46,10 +46,9 @@ export function Table({ users }: TableProps) {
                 </tbody>
             </table>
 
-            <button id="new-button" onClick={handleOpenModal}>
+            <button id="new-button" onClick={() => handleOpenForm()}>
                 Novo jogador
             </button>
-            {isModalOn && <Form />}
         </>
     );
 }

@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import "./Form.css";
 import { useUserDataMutate } from "../../hooks/useUserDataMutate";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserFormData } from "../../interfaces/UserFromData";
 import { SuccessModal } from "../Modal/SuccesModal/SuccessModal";
 import { Input } from "../Input/Input";
@@ -12,17 +12,15 @@ export function Form() {
     const [telephone, setTelephone] = useState("");
     const [codenameGroup, setCodenameGroup] = useState("vingadores");
     const [isModalOn, setIsModalOn] = useState(false);
+    // const [errorMsg, setErrorMsg] = useState("");
 
     const navigate = useNavigate();
-    const navigateToTable = () => navigate("/users");
-    const navigateToHome = () => navigate("/");
 
     const handleOpenModal = () => {
         setIsModalOn((prev) => !prev);
     };
 
-    const { mutate, isSuccess, isError, error  } =
-        useUserDataMutate();
+  const {mutate, isError, isSuccess, data} = useUserDataMutate();
 
     const submit = (e: FormEvent) => {
         e.preventDefault();
@@ -34,7 +32,8 @@ export function Form() {
             codenameGroup,
         };
 
-       mutate(userFormData);
+        console.log(data);
+        mutate(userFormData);
     };
 
     useEffect(() => {
@@ -47,7 +46,7 @@ export function Form() {
     }, [isError]);
 
     return (
-        <div className="modal-overlay">  
+        <div className="modal-overlay">
             <form onSubmit={(e) => submit(e)} className="form">
                 <fieldset id="cadastro-wrap">
                     <legend>Cadastro do jogador UOL</legend>
@@ -108,17 +107,17 @@ export function Form() {
                 </fieldset>
                 <div id="button-wrapper">
                     <button type="submit">Cadastrar</button>
-                    <button onClick={navigateToTable}>Listar Jogadores</button>
+                    <Link to={"/users"}>Listar Jogadores</Link>
                 </div>
 
                 {isModalOn && (
                     <SuccessModal
                         isError={isError}
-                        error={error}
+                        error={""}
                         isSuccess={isSuccess}
                         onClose={() => {
                             handleOpenModal();
-                            isError ? navigateToHome() : navigateToTable();
+                            isError ? navigate("/") : navigate("/users");
                         }}
                     />
                 )}
