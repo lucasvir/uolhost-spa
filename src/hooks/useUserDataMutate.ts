@@ -4,18 +4,16 @@ import { UserFormData } from "../interfaces/UserFromData";
 
 const API_URL = "http://localhost:8080";
 
-export let exceptionMsg = "";
-
 const postData = async (
     data: UserFormData
 ): Promise<AxiosResponse<unknown>> => {
-    const response = axios
+    const response = await axios
         .post(API_URL + "/users/form", data)
-        .then((response) => response.data)
-        .catch((erro) => {
-            exceptionMsg = erro.response.data.message;
+        .catch((error) => {
+           throw new Error(error.response.data.message);
         });
-    return (await response).data;
+
+    return response?.data;
 };
 
 export function useUserDataMutate() {
@@ -23,10 +21,9 @@ export function useUserDataMutate() {
 
     const mutation = useMutation({
         mutationFn: postData,
-        mutationKey: ['post-query'],
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["user-data"] });
-        }
+        },
     });
 
     return mutation;

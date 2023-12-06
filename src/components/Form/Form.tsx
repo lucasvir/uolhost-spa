@@ -12,7 +12,6 @@ export function Form() {
     const [telephone, setTelephone] = useState("");
     const [codenameGroup, setCodenameGroup] = useState("vingadores");
     const [isModalOn, setIsModalOn] = useState(false);
-    // const [errorMsg, setErrorMsg] = useState("");
 
     const navigate = useNavigate();
 
@@ -20,7 +19,7 @@ export function Form() {
         setIsModalOn((prev) => !prev);
     };
 
-  const {mutate, isError, isSuccess, data} = useUserDataMutate();
+  const {mutate, isError, isSuccess, error} = useUserDataMutate();
 
     const submit = (e: FormEvent) => {
         e.preventDefault();
@@ -32,7 +31,6 @@ export function Form() {
             codenameGroup,
         };
 
-        console.log(data);
         mutate(userFormData);
     };
 
@@ -113,7 +111,7 @@ export function Form() {
                 {isModalOn && (
                     <SuccessModal
                         isError={isError}
-                        error={""}
+                        error={error}
                         isSuccess={isSuccess}
                         onClose={() => {
                             handleOpenModal();
