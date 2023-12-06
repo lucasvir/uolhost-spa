@@ -66,8 +66,10 @@ input:focus {
 
 #button-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
+    gap: 24px;
 }
 
 #button-wrapper > button {
@@ -85,4 +87,13 @@ input:focus {
 
 #button-wrapper > button:hover {
     background-color: #ff3c00;
+}
+
+#list-link {
+    text-decoration: none;
+    color: #ff8c00;
+}
+
+#list-link:hover {
+    text-decoration: underline;
 }

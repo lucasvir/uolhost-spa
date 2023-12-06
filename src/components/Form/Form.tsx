@@ -105,7 +105,7 @@ export function Form() {
                 </fieldset>
                 <div id="button-wrapper">
                     <button type="submit">Cadastrar</button>
-                    <Link to={"/users"}>Listar Jogadores</Link>
+                    <Link id="list-link" to={"/users"}>Listar Jogadores</Link>
                 </div>
 
                 {isModalOn && (
