@@ -1,4 +1,4 @@
-import "../Modals.css";
+import "./Modals.css";
 
 interface SuccessModalProps {
     isError: boolean;
@@ -7,7 +7,7 @@ interface SuccessModalProps {
     onClose: () => void;
 }
 
-export function SuccessModal({
+export function Modal({
     onClose,
     isSuccess,
     isError,

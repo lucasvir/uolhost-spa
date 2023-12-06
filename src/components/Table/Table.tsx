@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from "uuid";
+import { useUserDeleteMutate } from "../../hooks/useUserDeleteMutate";
 import { UserData } from "../../interfaces/UserData";
 import "./Table.css";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,11 @@ export function Table({ users }: TableProps) {
     const handleOpenForm = () => {
         navigate('/form');
     };
+
+    const { mutate } = useUserDeleteMutate();
+    const handleDelete = (id: string) => {
+        mutate(id);
+    }
 
     return (
         <>
@@ -29,7 +34,7 @@ export function Table({ users }: TableProps) {
                 </thead>
                 <tbody>
                     {users?.map((userData) => (
-                        <tr key={uuidv4()}>
+                        <tr key={userData.id}>
                             <td>{userData.name}</td>
                             <td>{userData.email}</td>
                             <td>{userData.telephone}</td>
@@ -39,7 +44,7 @@ export function Table({ users }: TableProps) {
                                 <button className="link-button">editar</button>
                             </td>
                             <td>
-                                <button className="link-button">excluir</button>
+                                <button className="link-button" onClick={() => handleDelete(userData.id)}>excluir</button>
                             </td>
                         </tr>
                     ))}

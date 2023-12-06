@@ -10,7 +10,7 @@ const postData = async (
     const response = await axios
         .post(API_URL + "/users/form", data)
         .catch((error) => {
-           throw new Error(error.response.data.message);
+            throw new Error(error.response.data.message);
         });
 
     return response?.data;

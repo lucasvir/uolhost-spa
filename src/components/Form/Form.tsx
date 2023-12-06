@@ -3,8 +3,8 @@ import "./Form.css";
 import { useUserDataMutate } from "../../hooks/useUserDataMutate";
 import { Link, useNavigate } from "react-router-dom";
 import { UserFormData } from "../../interfaces/UserFromData";
-import { SuccessModal } from "../Modal/SuccesModal/SuccessModal";
 import { Input } from "../Input/Input";
+import { Modal } from "../Modal/Modal";
 
 export function Form() {
     const [name, setName] = useState("");
@@ -109,7 +109,7 @@ export function Form() {
                 </div>
 
                 {isModalOn && (
-                    <SuccessModal
+                    <Modal
                         isError={isError}
                         error={error}
                         isSuccess={isSuccess}
