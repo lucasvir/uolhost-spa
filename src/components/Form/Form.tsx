@@ -40,8 +40,11 @@ export function Form() {
     }, [isSuccess]);
 
     useEffect(() => {
+        if(!isError) return;
         handleOpenModal();
     }, [isError]);
+
+    console.log(error)
 
     return (
         <div className="modal-overlay">
