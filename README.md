@@ -1,30 +1,37 @@
-# React + TypeScript + Vite
+# Uol Host teste back-end
+Single Page Application para consumo da API Rest - proposta de teste back-end do Uol Host. <br />
+Interface simples desenvolvida para meus estudos em Java e Spring Framework
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> "O teste consiste em montar uma aplicação Java capaz de recuperar informações de um arquivo XML e de um arquivo JSON, persistir um cadastro em um banco de dados em memória ou em arquivo e listar os cadastros em uma interface simples." <br />
 
-Currently, two official plugins are available:
+[Repositorio do teste](https://github.com/uolhost/test-backEnd-Java) <br />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Projeto inclui:
+- Leitura e processamento de dados que estão em arquivos JSON e XML via URL externa.
+- Persistencia em banco de dados em memória (H2). 
+- Listar todos os usuário incluindo os codinomes escolhidos randomicamente dos arquivos, bem como de que lista o codinome pertence.
 
-## Expanding the ESLint configuration
+  Mais detalhes da [proposta](https://github.com/uolhost/test-backEnd-Java). <br />
+  Repositório da [API](https://github.com/lucasvir/uolhost-test).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Techs:
+  - React
+  - TypeScript
+  - CSS
+  - Vite
 
-- Configure the top-level `parserOptions` property like this:
+## 
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Home
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+![Home](github/imgs/spa_1.png)
+
+### Form
+Form para cadastro de usuários
+
+![Form](github/imgs/spa_2.png)
+
+### Table
+Lista de todos os usuários cadastrados
+
+![Table](github/imgs/spa_3.png)
